@@ -1,9 +1,24 @@
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        
+        <style>
+        .regulamin{
+            margin-top:12px;
+        }
+        .grid{
+            display: grid;
+            grid-template-columns:repeat(3,1fr);
+            grid-gap:20px;
+        }
+        .filter{
+            display: block;
+            position: sticky;
+            top: 20px;
+        }
+        </style>
         {% block stylesheets %}
            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
         {% endblock %}
@@ -19,6 +34,6 @@
 
         {% block body %}{% endblock %}
          
- {% include 'footer/footer.html.twig' %}
+
     </body>
 </html>

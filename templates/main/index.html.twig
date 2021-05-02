@@ -1,8 +1,22 @@
 {% extends 'base.html.twig' %}
-{% block title %}Fotografie{% endblock %}
-{% block body %}
 
- {% for message in app.flashes('success') %}
-        <div class="alert alert-success" role="alert">{{ message }}</div>
-    {% endfor %}
+
+{% block title %}Fotografie{% endblock %}
+
+{% block body %}
+    <div class ="container">
+        <div class="row">
+            <div class="col-md-3">
+             {% include 'main/_filter.html.twig' with {form: form} only  %}
+            </div>
+            <div class="col-md-9">
+                <div class="grid">
+                    {% for product in products %}
+                        {% include 'main/_card.html.twig' with {product: product} only  %}
+                     {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}
