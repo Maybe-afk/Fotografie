@@ -1,17 +1,50 @@
-{{form_start(form, {attr: {class: 'filter'}})}}
-{{form_row(form.q)}}
-<h4>Kategorie</h4>
-{{form_row(form.categories)}}
-<h4>Cena</h4>
-<div class="row">
-    <div class ="col-md-3">
-    {{form_row(form.min)}}
-    </div>
-    <div class ="col-md-3">
-    {{form_row(form.max)}}
-    </div>
+<div class="container" style="margin-top:1%; margin-bottom: 1%">
+	<div class="card" style="text-align:center">
+		<div class="card-body">
+			{{form_start(form, {attr: {class: 'filter'}})}}
+			<div class="row">
+				<div class="col col-md-3">
+					<div class="row">
+						<h4>Parametry</h4>
+						<div class="col-md-6" style="margin-top:5px">
+							Promowane
+							{{form_row(form.promo, {'attr': {'style': ''}})}}
+						</div>
+						<div class="col-md-6">
+							<div class="dropdown">
+								<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+									Kategorie
+								</button>
+								<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+									<li>
+										{{form_row(form.categories, {'attr': {'style': 'max-width:200px'}}) }}
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col col-md-3">
+					<h4>Cena</h4>
+					<div class="row">
+						<div class="col-md-6">
+							{{form_row(form.min, {'attr': {'class': 'form-control', 'style': 'text-align:center'}})}}
+						</div>
+						<div class="col-md-6">
+							{{form_row(form.max, {'attr': {'class': 'form-control', 'style': 'text-align:center'}})}}
+						</div>
+					</div>
+				</div>
+				<div class="col col-md-3">
+					<h4>Wyszukiwanie po nazwach</h4>
+					{{form_row(form.q, {'attr': {'class': 'form-control', 'style': 'text-align:center'}})}}
+				</div>
+				<div class="col col-md-3">
+					<h4>Zatwierdź parametry</h4>
+					<button type="submit" class="btn btn-dark w-100">Filtruj</button>
+				</div>
+			</div>
+			{{form_end(form)}}
+		</div>
+	</div>
 </div>
-<h4>Promowane</h4>
-{{form_row(form.promo)}}
-<button type="submit" class="btn btn-dark w-100">Filtruj</button>
-{{form_end(form)}}
