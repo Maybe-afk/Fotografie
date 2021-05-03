@@ -32,7 +32,7 @@ class Product
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $description;
+    private $author;
 
     /**
      * @ORM\Column(type="text")
@@ -58,6 +58,11 @@ class Product
      * @ORM\Column(type="integer")
      */
     private $amount;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $description;
 
     public function __construct()
     {
@@ -93,14 +98,14 @@ class Product
         return $this;
     }
 
-    public function getDescription(): ?string
+    public function getAuthor(): ?string
     {
-        return $this->description;
+        return $this->author;
     }
 
-    public function setDescription(string $description): self
+    public function setAuthor(string $description): self
     {
-        $this->description = $description;
+        $this->author = $author;
 
         return $this;
     }
@@ -173,6 +178,18 @@ class Product
     public function setAmount(int $amount): self
     {
         $this->amount = $amount;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
 
         return $this;
     }

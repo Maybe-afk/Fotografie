@@ -1,17 +1,21 @@
-
 <div class="card">
 <img src="{{product.image}}" alt="cos" class="card-img-top">
     <div class ="card-body">
     <h5 class="card-title">{{product.name}}</h5>   
-    <h5 class="card-title" style="font-weight: bold; font-size: 1.5rem;">
+    <div class="card-title text-primary font-weight-bold">
     <h5 class="card-title">{{product.price | number_format(0,',','')}} zł</h5>  
+    </div>
      <h5 class="card-title text text-danger">{{product.amount}} sztuk</h5>  
     {% if product.promo %}
     <div class="text text-warning">Promowane ! </div>
     {% endif %}
     <p class="text text-muted">{{product.description}}</p>  
     </div>
+    <button >Jakis guzik wyswietlajacy zdjecie</button>
+    <div class="d-flex justify-content-around">
     {% for c in product.categories %}
     <em class="text-muted text-primary text-italic">#{{c.name}}</em>
     {% endfor %}
+     <p class="text text-muted">{{product.author}}</p>  
+     </div>
 </div>
