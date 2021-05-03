@@ -1,11 +1,25 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Password Reset Email Sent{% endblock %}
+{% block title %}Password Reset Email Sent
+{% endblock %}
 
 {% block body %}
-    <p>
-        An email has been sent that contains a link that you can click to reset your password.
-        This link will expire in {{ resetToken.expirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle') }}.
-    </p>
-    <p>If you don't receive an email please check your spam folder or <a href="{{ path('app_forgot_password_request') }}">try again</a>.</p>
+	{% for flashError in app.flashes('reset_password_error') %}
+		<div class="alert alert-danger" role="alert">{{ flashError }}</div>
+	{% endfor %}
+
+	<div class="container" style="max-width: 700px; margin-top:10%">
+		<div class="card" style="text-align:center; height: 400px">
+			<h2 class="mt-5">Została wysłana wiadomość e-mail w celu zresetowania hasła</h2>
+			<div class="card-body">
+				<h5 class="card-title mt-3">Wysłana wiadomość stanie się nieważna za:</h5>
+				<h4>{{ resetToken.expirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle') }}</h4>
+				<div class="mt-3">
+					Jeżeli nie dostałeś wiadomości e-mail
+					<a href="{{ path('app_forgot_password_request') }}">kliknij</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
 {% endblock %}

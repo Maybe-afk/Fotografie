@@ -1,0 +1,36 @@
+.regulamin{
+    margin-top:12px;
+}
+.grid{
+    display: grid;
+    grid-template-columns:repeat(3,1fr);
+    grid-gap:20px;
+}
+.filter{
+    display: block;
+    position: sticky;
+    top: 20px;
+}
+
+.offerTag{
+    margin-left: 20px;
+}
+
+.tags{
+    margin-right: 10px
+}
+
+.example-wrapper {
+    margin: 1em auto;
+    max-width: 800px;
+    width: 95%;
+    font: 18px / 1.5 sans-serif;
+}
+.example-wrapper code {
+    background: #F5F5F5;
+    padding: 2px 6px;
+}
+
+.imageOfferButtons{
+    width:100%
+}

@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello UserController!{% endblock %}
+
+{% block body %}
+
+<div class="container" style="max-width: 700px; margin-top:10%">
+    <div class="card" style="text-align:center">
+        <h2>Panel użytkownika</h2>
+        <div class="card-body">
+            <h5 class="card-title">Nazwa użytkownika</h5>
+            <p class="card-text">Tutaj nazwa z bazy</p>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">E-mail</h5>
+            <p class="card-text">Tutaj email z bazy</p>
+        </div>        
+        <div class="card-body">
+            <h5 class="card-title">Typ użytkownika</h5>
+            <p class="card-text">Tutaj typ użytkownika z bazy</p>
+        </div>
+        <div class="card-body">
+            <a href="/userEdit" class="btn btn-primary" style="width: 200px;">Edytuj konto</a>
+            <a href="" class="btn btn-danger" style="width: 200px;">Usuń konto</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

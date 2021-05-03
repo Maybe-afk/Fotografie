@@ -1,0 +1,101 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello UserController!
+{% endblock %}
+
+{% block body %}
+
+	<div class="container" style="margin-top:3%">
+		<div class="row">
+			<div class="col-6">Ilość kopii na sprzedaż 1/12</div>
+			<div class="col-6">Cena - 200zł</div>
+		</div>
+		<div class="row mt-2" style="height:300px">
+			<div class="col col-md-7 col-12" style="border: 3px solid red">
+				<img src="" alt="cos" class="card-img-top">
+			</div>
+			<div class="col col-md-1 col-12"></div>
+			<div class="col col-md-4 col-12">
+				<div class="card mt-2">
+					<form>
+						<span class="form-control">Użytkownik 1 Poprzednie komentarze 1</span>
+						<span class="form-control">Użytkownik 2 Poprzednie komentarze 2</span>
+						<span class="form-control">Użytkownik 3 Poprzednie komentarze 3</span>
+						<span class="form-control">Użytkownik 4 Poprzednie komentarze 4</span>
+						<div class="row">
+							<div class="col col-md-3">
+								Nasz nickname
+							</div>
+							<div class="col col-md-9">
+								<input type="text" class="form-control" id="comment" placeholder="Napisz komentarz" style="text-align:center">
+							</div>
+						</div>
+						<input type="submit" text="Wyślij wiadomość" class="btn btn-primary imageOfferButtons">
+						<button class="btn btn-danger mt-1" style="width:100%">Usuń zdjęcie</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="row mt-2">
+			<div class="col col-md-6">
+				<div class="row">
+					<div class="col col-md-4" style="margin-top:1%">
+						Nazwa fotografa z bazy
+					</div>
+					<div class="col col-md-4" style="margin-top:1%">
+						Ilość polubień
+					</div>
+					<div class="col col-md-4">
+						<button class="btn btn-info">Rodzaje druku</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row mt-5">
+			<div class="col col-md-6">
+				<div class="row">
+					<div class="col col-md-4">
+						<h5>Lista kategorii druku:</h5>
+						<div>Elektroniczne</div>
+						<div>A4</div>
+						<div>Kafelki</div>
+						<div>itd.</div>
+					</div>
+					<div class="col col-md-4">
+						<div class="row">
+							<div class="col col-md-6">
+								<h5>Cena</h5>
+								<div>10 zł</div>
+								<div>20 zł</div>
+								<div>30 zł</div>
+								<div>itd.</div>
+							</div>
+							<div class="col col-md-6">
+								<h5>Wybierz</h5>
+								<div class="form-check d-flex justify-content-center">
+									<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+								</div>
+								<div class="form-check d-flex justify-content-center">
+									<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+								</div>
+								<div class="form-check d-flex justify-content-center">
+									<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+								</div>
+								<div class="form-check d-flex justify-content-center">
+									<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col col-md-4">
+						<button class="btn btn-success">Przejdź do zakupu</button>
+					</div>
+				</div>
+			</div>
+			<div class="col col-md-6"></div>
+		</div>
+
+	</div>
+
+</div>{% endblock %}
