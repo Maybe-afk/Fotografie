@@ -8,16 +8,19 @@
     <div class="card" style="text-align:center">
         <h2>Panel użytkownika</h2>
         <div class="card-body">
-            <h5 class="card-title">Nazwa użytkownika</h5>
-            <p class="card-text">Tutaj nazwa z bazy</p>
+            <h5 class="card-title">Imię i Nazwisko</h5>
+            <p class="card-text">{{ app.user.name }} {{ app.user.firstname }}</p>
         </div>
         <div class="card-body">
             <h5 class="card-title">E-mail</h5>
-            <p class="card-text">Tutaj email z bazy</p>
+            <p class="card-text">{{ app.user.email }}</p>
         </div>        
         <div class="card-body">
             <h5 class="card-title">Typ użytkownika</h5>
-            <p class="card-text">Tutaj typ użytkownika z bazy</p>
+            <p class="card-text">{% for role in app.user.roles %}
+                                {{ role }} <br> 
+                                {% endfor %}</p>
+            
         </div>
         <div class="card-body">
             <a href="/userEdit" class="btn btn-primary" style="width: 200px;">Edytuj konto</a>
@@ -25,4 +28,5 @@
         </div>
     </div>
 </div>
+{% endif %}
 {% endblock %}
