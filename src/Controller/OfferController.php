@@ -12,7 +12,7 @@ class OfferController extends AbstractController
     public function index(): Response
     {
         return $this->render('imageOffer/imageOffer.html.twig', [
-            'controller_name' => 'UserController',
+            'controller_name' => 'OfferController',
         ]);
     }
 }
