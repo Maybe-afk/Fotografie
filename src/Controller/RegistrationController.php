@@ -87,4 +87,12 @@ class RegistrationController extends AbstractController
 
         return $this->redirectToRoute('app_home');
     }
+
+    #[Route('/regulamin', name: 'regulamin')]
+    public function index(): Response
+    {
+        return $this->render('registration/regulamin.html.twig', [
+            'controller_name' => 'RegistrationController',
+        ]);
+    }
 }
