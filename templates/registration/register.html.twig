@@ -42,12 +42,8 @@
 						Typ:
 					</div>
 					<div class='col col-md-9 col-12 d-flex justify-content-center'>
-						<select class="form-select" aria-label="Default select example" style="width:200px">
-							<option selected>Typ użytkownika</option>
-							<option value="1">Zwykły użytkownik</option>
-							<option value="2">Fotograf</option>
-							<option value="3">Usługodawca</option>
-						</select>
+						{{ form_row(registrationForm.roles, {'attr': {'class': 'form-control mt-2'}}) }}
+						
 					</div>
 					<div class='col col-md-4 col-6 d-flex justify-content-end' style="margin-top:2%">
 						<a href="/regulamin" target="_blank">Regulamin:</a>
