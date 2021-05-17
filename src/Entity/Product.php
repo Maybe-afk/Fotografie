@@ -103,7 +103,7 @@ class Product
         return $this->author;
     }
 
-    public function setAuthor(string $description): self
+    public function setAuthor(string $author): self
     {
         $this->author = $author;
 
