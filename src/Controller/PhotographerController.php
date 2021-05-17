@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class PhotographerController extends AbstractController
 {
-    #[Route('/user/photographer', name: 'photographer')]
+    #[Route('/photographer', name: 'photographer')]
     public function index(): Response
     {
         return $this->render('photographer/photographerPanel.html.twig', [
