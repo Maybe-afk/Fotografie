@@ -35,11 +35,6 @@ class Product
     private $author;
 
     /**
-     * @ORM\Column(type="text")
-     */
-    private $content;
-
-    /**
      * @ORM\Column(type="boolean")
      */
     private $promo;
@@ -109,19 +104,7 @@ class Product
 
         return $this;
     }
-
-    public function getContent(): ?string
-    {
-        return $this->content;
-    }
-
-    public function setContent(string $content): self
-    {
-        $this->content = $content;
-
-        return $this;
-    }
-
+    
     public function getPromo(): ?bool
     {
         return $this->promo;
