@@ -11,108 +11,118 @@
 			object-fit: contain;
 			float: left;
 		}
+
+		.padding-0 {
+			padding-right: 0;
+			padding-left: 0;
+		}
 	</style>
 
 
-	<div class="container" style="margin-top:3%; height:700px">
-		<div class="row">
-			<div class="col-1"></div>
-			<div class="col-4">Ilość pozostałych kopii na sprzedaż:
-				{{product.amount}}</div>
-			<div class="col-3">Cena
-				{{product.price}}
-				zł</div>
-			<div class="col-4"></div>
-		</div>
-
+	<div class="container" style="margin-top:3%; height:auto">
 		<div class="row mt-2" style="height:300px;">
 			<div class="col col-md-7 col-12" style="height:300px">
 				<img src="{{product.image}}" alt="cos" class="card-img-top im">
 			</div>
 			<div class="col col-md-5 col-12">
-				<div class="card mt-2">
-					<form>
-						<!--<span class="form-control">Użytkownik 1 Poprzednie komentarze 1</span>
-												<span class="form-control">Użytkownik 2 Poprzednie komentarze 2</span>
-												<span class="form-control">Użytkownik 3 Poprzednie komentarze 3</span>
-												<span class="form-control">Użytkownik 4 Poprzednie komentarze 4</span>-->
-						<div class="row">
-							<div class="col col-md-3">
-								{% if app.user %}
-									{{ app.user.name }}
-									{{ app.user.firstname }}
-								{% else %}
+				<div>
+					<p style="font-size:20px">Ilość pozostałych kopii na sprzedaż:
+						<b>{{product.amount}}</b>
+					</p>
+				</div>
+				<div>
+					<p style="font-size:20px">Cena zdjęcia:
+						<b>{{product.price}}
+							zł</b>
+					</p>
+				</div>
+				<div>
+					<p style="font-size:20px">Nazwa fotografa z bazy:
+						<b>Nazwa fotografa z bazy</b>
+					</p>
+				</div>
+				<div>
+					<p style="font-size:20px">Ilość polubień:
+						<b>Ilość z bazy</b>
+					</p>
+				</div>
+				<!--<button class="btn btn-danger mt-1" style="width:100%">Usuń zdjęcie</button>-->
+			</div>
+		</div>
+	</div>
 
-									Zaloguj się aby dodać komentarz
-								{% endif %}
-							</div>
-							<div class="col col-md-9">
-								<input type="text" class="form-control" id="comment" placeholder="Napisz komentarz" style="text-align:center">
-							</div>
-						</div>
+	<div class="container mt-4">
+		<div class="card">
+			<form>
+				<div class="row mx-0">
+					<div class="col col-md-3 px-0">
+						{% if app.user %}
+							{{ app.user.name }}
+							{{ app.user.firstname }}
+						{% else %}
+
+							<span class="input-group-text" id="forInputComment">Niezalogowany Użytkownik</span>
+						{% endif %}
+					</div>
+					<div class="col col-md-7 px-0">
+						<input type="text" class="form-control" id="comment" placeholder="Napisz komentarz" style="text-align:center" aria-describedby="forInputComment">
+					</div>
+					<div class="col col-md-2 px-0">
 						<input type="submit" text="Wyślij wiadomość" class="btn btn-primary imageOfferButtons">
-					</form>
+					</div>
 				</div>
-			</div>
+			</form>
 		</div>
-		<div class="row mt-2">
-			<div class="col col-md-6">
-				<div class="row">
-					<div class="col col-md-3" style="margin-top:1%">
-					</div>
-					<div class="col col-md-4" style="margin-top:1%">
-						Autor: {{product.author}}
-					</div>
-					<div class="col col-md-4" style="margin-top:1%">
-						Ilość polubień
-					</div>
+	</div>
 
-				</div>
-			</div>
-		</div>
 
+	<!--<span class="form-control">Użytkownik 1 Poprzednie komentarze 1</span>
+																										<span class="form-control">Użytkownik 2 Poprzednie komentarze 2</span>
+																										<span class="form-control">Użytkownik 3 Poprzednie komentarze 3</span>
+																										<span class="form-control">Użytkownik 4 Poprzednie komentarze 4</span>-->
 	<!--	<div class="row mt-5">
-			<div class="col col-md-6">
-				<div class="row">
-					<div class="col col-md-4">
-						<h5>Lista kategorii druku:</h5>
-						<div>Elektroniczne</div>
-						<div>A4</div>
-						<div>Kafelki</div>
-						<div>itd.</div>
-					</div>
-					<div class="col col-md-4">
-						<div class="row">
-							<div class="col col-md-6">
-								<h5>Cena</h5>
-								<div>10 zł</div>
-								<div>20 zł</div>
-								<div>30 zł</div>
-								<div>itd.</div>
-							</div>
-							<div class="col col-md-6">
-								<h5>Wybierz</h5>
-								<div class="form-check d-flex justify-content-center">
-									<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
-								</div>
-								<div class="form-check d-flex justify-content-center">
-									<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-								</div>
-								<div class="form-check d-flex justify-content-center">
-									<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
-								</div>
-								<div class="form-check d-flex justify-content-center">
-									<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col col-md-4">
-						<button class="btn btn-success">Przejdź do zakupu</button>
-					</div>
-				</div>
-			</div>
-			<div class="col col-md-6"></div>
-		</div> 
-	</div>-->
-</div>{% endblock %}
+													<div class="col col-md-6">
+														<div class="row">
+															<div class="col col-md-4">
+																<h5>Lista kategorii druku:</h5>
+																<div>Elektroniczne</div>
+																<div>A4</div>
+																<div>Kafelki</div>
+																<div>itd.</div>
+															</div>
+															<div class="col col-md-4">
+																<div class="row">
+																	<div class="col col-md-6">
+																		<h5>Cena</h5>
+																		<div>10 zł</div>
+																		<div>20 zł</div>
+																		<div>30 zł</div>
+																		<div>itd.</div>
+																	</div>
+																	<div class="col col-md-6">
+																		<h5>Wybierz</h5>
+																		<div class="form-check d-flex justify-content-center">
+																			<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+																		</div>
+																		<div class="form-check d-flex justify-content-center">
+																			<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+																		</div>
+																		<div class="form-check d-flex justify-content-center">
+																			<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+																		</div>
+																		<div class="form-check d-flex justify-content-center">
+																			<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div class="col col-md-4">
+																<button class="btn btn-success">Przejdź do zakupu</button>
+															</div>
+														</div>
+													</div>
+													<div class="col col-md-6"></div>
+												</div> 
+										
+											</div>-->
+{% endblock %}

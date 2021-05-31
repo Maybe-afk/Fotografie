@@ -1,3 +1,17 @@
+<style>
+.anyClass {
+  height:150px;
+  overflow-y: scroll;
+}
+
+.wrapper{
+width:200px;
+padding:20px;
+height: 150px;
+}
+</style>
+
+
 <div class="container" style="margin-top:1%; margin-bottom: 1%">
 	<div class="card" style="text-align:center">
 		<div class="card-body">
@@ -15,7 +29,7 @@
 								<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
 									Kategorie
 								</button>
-								<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+								<ul class="dropdown-menu wrapper" aria-labelledby="dropdownMenuButton1">
 									<li>
 										{{form_row(form.categories, {'attr': {'style': 'max-width:200px'}}) }}
 									</li>
