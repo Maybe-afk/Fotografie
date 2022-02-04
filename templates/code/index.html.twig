@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CodeController!{% endblock %}
+
+{% block body %}
+
+<div class="card text-center">
+ 
+  <div class="card-body">
+    <h5 class="card-title">Twój wygenerowany kod dostępu to:</h5>
+    <p class="card-text">{{code.code}}</p>
+    
+  </div>
+  <div class="card-footer text-muted">
+  {% for product in products %}
+    <b>{{product.name}}</b>
+  </div>
+</div>
+{% endfor %}
+{% endblock %}

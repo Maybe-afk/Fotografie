@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UsersRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -50,6 +52,18 @@ class Users implements UserInterface
      * @ORM\Column(type="string", length=100)
      */
     private $firstname;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Test::class, mappedBy="userid")
+     */
+    private $tests;
+
+    public function __construct()
+    {
+        $this->tests = new ArrayCollection();
+    }
+
+   
 
     public function getId(): ?int
     {
@@ -167,5 +181,38 @@ class Users implements UserInterface
 
         return $this;
     }
-    
+
+    public function getIsVerified(): ?bool
+    {
+        return $this->isVerified;
+    }
+
+    /**
+     * @return Collection|Test[]
+     */
+    public function getTests(): Collection
+    {
+        return $this->tests;
+    }
+
+    public function addTest(Test $test): self
+    {
+        if (!$this->tests->contains($test)) {
+            $this->tests[] = $test;
+            $test->addUserid($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTest(Test $test): self
+    {
+        if ($this->tests->removeElement($test)) {
+            $test->removeUserid($this);
+        }
+
+        return $this;
+    }
+
+   
 }

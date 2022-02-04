@@ -51,8 +51,8 @@ class RegistrationFormType extends AbstractType
                 'expanded' => false,
                 'choices' =>[
                     'Użytkownik' => 'ROLE_USER',
-                    'Fotograf' => 'ROLE_PHOTO',
-                    'Usługodawca' => 'ROLE_SERVICE_PROVIDER'
+                    'Admin' => 'ROLE_ADMIN',
+                   
                 ]
             ])
         ;

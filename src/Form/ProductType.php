@@ -18,6 +18,10 @@ class ProductType extends AbstractType
             ->add('promo', null, array('label' => false))
             ->add('image', null, array('label' => false))
             ->add('amount', null, array('label' => false))
+            ->add('dlugosc', null, array('label' => false))
+            ->add('szerokosc', null, array('label' => false))
+            ->add('data', null, array('label' => false))
+            ->add('region', null, array('label' => false))
             ->add('description', null, array('label' => false))
             ->add('categories', null, array('label' => false))
         ;

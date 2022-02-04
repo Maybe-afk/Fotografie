@@ -59,6 +59,26 @@ class Product
      */
     private $description;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $region;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $Data;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $dlugosc;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $szerokosc;
+
     public function __construct()
     {
         $this->categories = new ArrayCollection();
@@ -173,6 +193,54 @@ class Product
     public function setDescription(string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getRegion(): ?string
+    {
+        return $this->region;
+    }
+
+    public function setRegion(string $region): self
+    {
+        $this->region = $region;
+
+        return $this;
+    }
+
+    public function getData(): ?string
+    {
+        return $this->Data;
+    }
+
+    public function setData(string $Data): self
+    {
+        $this->Data = $Data;
+
+        return $this;
+    }
+
+    public function getDlugosc(): ?string
+    {
+        return $this->dlugosc;
+    }
+
+    public function setDlugosc(string $dlugosc): self
+    {
+        $this->dlugosc = $dlugosc;
+
+        return $this;
+    }
+
+    public function getSzerokosc(): ?string
+    {
+        return $this->szerokosc;
+    }
+
+    public function setSzerokosc(string $szerokosc): self
+    {
+        $this->szerokosc = $szerokosc;
 
         return $this;
     }
